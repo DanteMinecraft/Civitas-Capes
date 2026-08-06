@@ -1,11 +1,11 @@
-package net.dantemc.civitascapes;
+package net.dantemc.civitascapes.cape;
 
 import net.minecraft.resources.ResourceLocation;
 
 import java.util.UUID;
 
-public class CapeManager {
-
+public class CapeManagerOLD {
+/*
     private static final ResourceLocation TEST_CAPE =
             ResourceLocation.fromNamespaceAndPath(
                     "civitas_capes",
@@ -17,4 +17,7 @@ public class CapeManager {
 
         //return null;
     }
+
+*/
+
 }
