@@ -29,4 +29,12 @@ public class PlayerCapeData {
     public void setActiveCape(String activeCape) {
         this.activeCape = activeCape;
     }
+
+    public List<String> getUnlockedCapes() {
+        return unlockedCapes;
+    }
+
+    public void setUnlockedCapes(List<String> unlockedCapes) {
+        this.unlockedCapes = unlockedCapes;
+    }
 }
