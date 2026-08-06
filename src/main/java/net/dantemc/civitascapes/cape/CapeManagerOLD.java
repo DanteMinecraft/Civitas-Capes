@@ -9,7 +9,7 @@ public class CapeManagerOLD {
     private static final ResourceLocation TEST_CAPE =
             ResourceLocation.fromNamespaceAndPath(
                     "civitas_capes",
-                    "textures/capes/minecon.png");
+                    "textures/capes/default.png");
 
     public static ResourceLocation getCape(UUID uuid) {
         //if (uuid.equals(UUID.fromString("2e714d0e-4b93-402c-8ff0-b477d2fa9004")))

@@ -1,6 +1,7 @@
 package net.dantemc.civitascapes;
 
 import net.dantemc.civitascapes.cape.CapeLoader;
+import net.dantemc.civitascapes.data.CapeDataInitializer;
 import net.dantemc.civitascapes.player.PlayerLoader;
 import net.dantemc.civitascapes.render.CivitasCapeLayer;
 import net.minecraft.client.Minecraft;
@@ -25,6 +26,8 @@ public class CivitasCapesClient {
 
     @SubscribeEvent
     static void onClientSetup(FMLClientSetupEvent event) {
+
+        CapeDataInitializer.initialize();
 
         CapeLoader.load();
         PlayerLoader.load();

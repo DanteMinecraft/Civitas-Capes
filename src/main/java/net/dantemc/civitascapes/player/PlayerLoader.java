@@ -1,18 +1,35 @@
 package net.dantemc.civitascapes.player;
 
-import java.util.List;
-import java.util.UUID;
+import com.google.gson.Gson;
+import net.dantemc.civitascapes.data.CapeDataInitializer;
+import net.dantemc.civitascapes.player.wrapper.PlayerFile;
+
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.Reader;
 
 public class PlayerLoader {
-    //read players.json and fill PlayerCapeRegistry class
+
+    private static final Gson GSON = new Gson();
 
     public static void load() {
-        PlayerCapeData player = new PlayerCapeData(
-                UUID.fromString("2e714d0e-4b93-402c-8ff0-b477d2fa9004"),
-                "test",
-                List.of("test")
-        );
 
-        PlayerCapeRegistry.register(player);
+        //Read json
+        try (Reader reader = new FileReader(CapeDataInitializer.PLAYERS_FILE.toFile())) {
+
+            PlayerFile file = GSON.fromJson(reader, PlayerFile.class);
+            PlayerCapeRegistry.clear();
+
+            for (PlayerCapeData player : file.getPlayers()) {
+                PlayerCapeRegistry.register(player);
+            }
+
+            System.out.println("Loaded " + file.getPlayers().size() + " players.");
+
+        }
+        catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 }
