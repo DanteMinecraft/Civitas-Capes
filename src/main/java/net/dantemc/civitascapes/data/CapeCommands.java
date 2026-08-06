@@ -34,7 +34,7 @@ public class CapeCommands {
                                     PlayerLoader.load();
 
                                     context.getSource().sendSuccess(
-                                            () -> Component.literal("Reloaded Civitas Capes."),
+                                            () -> Component.literal("Reloaded Civitas Capes"),
                                             true
                                     );
 
@@ -174,6 +174,35 @@ public class CapeCommands {
                                                 )
                                 )
                         )
+                        // /civitascapes clear <player>
+                        .then(Commands.literal("clear")
+                                .requires(source -> source.hasPermission(2))
+                                .then(
+                                        Commands.argument("player", EntityArgument.player())
+                                                .executes(context -> {
+
+                                                    ServerPlayer player = EntityArgument.getPlayer(context, "player");
+
+                                                    PlayerCapeData playerData = PlayerCapeRegistry.get(player.getUUID());
+
+                                                    if (playerData == null) {
+                                                        context.getSource().sendFailure(
+                                                                Component.literal("That player has no cape data")
+                                                        );
+                                                        return 0;
+                                                    }
+
+                                                    playerData.setActiveCape(null);
+
+                                                    context.getSource().sendSuccess(
+                                                            () -> Component.literal(
+                                                                    "Cleared " + player.getName().getString() + "'s active cape"),
+                                                            true
+                                                    );
+
+                                                    return 1;
+                                                })
+                                ))
         );
     }
 }
