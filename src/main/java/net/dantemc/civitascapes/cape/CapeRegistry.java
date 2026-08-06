@@ -20,6 +20,10 @@ public class CapeRegistry {
         return ALL_CAPES.values();
     }
 
+    public static boolean contains(String id) {
+        return ALL_CAPES.containsKey(id);
+    }
+
     public static void clear() {
         ALL_CAPES.clear();
     }

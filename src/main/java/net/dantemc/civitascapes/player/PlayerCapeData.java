@@ -4,8 +4,15 @@ import java.util.List;
 import java.util.UUID;
 
 public class PlayerCapeData {
-    UUID uuid;
-    String activeCape;
+    private UUID uuid;
+    private String activeCape;
+    private List<String> unlockedCapes;
+
+    public PlayerCapeData(UUID uuid, String activeCape, List<String> unlockedCapes) {
+        this.uuid = uuid;
+        this.activeCape = activeCape;
+        this.unlockedCapes = unlockedCapes;
+    }
 
     public UUID getUuid() {
         return uuid;
@@ -22,14 +29,4 @@ public class PlayerCapeData {
     public void setActiveCape(String activeCape) {
         this.activeCape = activeCape;
     }
-
-    public List<String> getUnlockedCapes() {
-        return unlockedCapes;
-    }
-
-    public void setUnlockedCapes(List<String> unlockedCapes) {
-        this.unlockedCapes = unlockedCapes;
-    }
-
-    List<String> unlockedCapes;
 }

@@ -1,10 +1,18 @@
 package net.dantemc.civitascapes.cape;
 
 public class CapeDefinition {
+
     private String id;
     private String displayName;
     private CapeType type;
     private String location;
+
+    public CapeDefinition(String id, String displayName, CapeType type, String location) {
+        this.id = id;
+        this.displayName = displayName;
+        this.type = type;
+        this.location = location;
+    }
 
     public String getId() {
         return id;

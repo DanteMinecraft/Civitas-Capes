@@ -17,6 +17,10 @@ public class PlayerCapeRegistry {
         return PLAYERS.values();
     }
 
+    public static boolean contains(UUID uuid) {
+        return PLAYERS.containsKey(uuid);
+    }
+
     public static void clear() {
         PLAYERS.clear();
     }

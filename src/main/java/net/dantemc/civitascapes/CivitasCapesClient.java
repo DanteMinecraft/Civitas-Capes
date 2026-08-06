@@ -1,5 +1,7 @@
 package net.dantemc.civitascapes;
 
+import net.dantemc.civitascapes.cape.CapeLoader;
+import net.dantemc.civitascapes.player.PlayerLoader;
 import net.dantemc.civitascapes.render.CivitasCapeLayer;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.entity.player.PlayerRenderer;
@@ -23,8 +25,12 @@ public class CivitasCapesClient {
 
     @SubscribeEvent
     static void onClientSetup(FMLClientSetupEvent event) {
-        CivitasCapes.LOGGER.info("HELLO FROM CLIENT SETUP");
-        CivitasCapes.LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+
+        CapeLoader.load();
+        PlayerLoader.load();
+
+        CivitasCapes.LOGGER.info("[CIVITAS CAPES] Cape system initialized.");
+        CivitasCapes.LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getXuid());
     }
 
     @SubscribeEvent
