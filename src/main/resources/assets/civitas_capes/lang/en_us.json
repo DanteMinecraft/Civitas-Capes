@@ -1,0 +1,13 @@
+{
+  "itemGroup.civitas_capes": "Example Mod Tab",
+  "block.civitas_capes.example_block": "Example Block",
+  "item.civitas_capes.example_item": "Example Item",
+
+  "civitas_capes.configuration.title": "Civitas Capes Configs",
+  "civitas_capes.configuration.section.civitas_capes.common.toml": "Civitas Capes Configs",
+  "civitas_capes.configuration.section.civitas_capes.common.toml.title": "Civitas Capes Configs",
+  "civitas_capes.configuration.items": "Item List",
+  "civitas_capes.configuration.logDirtBlock": "Log Dirt Block",
+  "civitas_capes.configuration.magicNumberIntroduction": "Magic Number Text",
+  "civitas_capes.configuration.magicNumber": "Magic Number"
+}
